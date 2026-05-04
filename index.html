@@ -2,6 +2,292 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>HR Copilot | AI Assistant for Leave & HR Questions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body {
+      background: radial-gradient(circle at 10% 20%, #0a0f1e, #030614);
+      color: #e2e8f0;
+    }
+    .btn-gradient {
+      background: linear-gradient(95deg, #e11d48, #f43f5e);
+      transition: all 0.2s ease;
+    }
+    .btn-gradient:hover { transform: scale(0.98); box-shadow: 0 10px 20px -5px rgba(225,29,72,0.5); }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    .pricing-card {
+      transition: transform 0.2s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: rgba(15, 25, 45, 0.9);
+      border: 1px solid #334155;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      border-color: #e11d48;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #fb7185, #e11d48, #be123c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    hr { border-color: #334155; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
+    .text-gray-500, .text-gray-600, .text-gray-700 { color: #94a3b8 !important; }
+    .text-gray-400 { color: #64748b !important; }
+    .bg-white, .bg-white\/70, .bg-white\/40 { background-color: #0f172a !important; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-[#0a0f1e]/90 backdrop-blur-md border-b border-[#1e293b]">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <i class="fas fa-robot text-rose-400 text-2xl"></i>
+      <span class="font-bold text-2xl text-white">HR Copilot<span class="text-rose-400"> Pro</span></span>
+    </div>
+    <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
+      <a href="#features" class="hover:text-rose-400 transition">Features</a>
+      <a href="#pricing" class="hover:text-rose-400 transition">Pricing</a>
+      <a href="#hosting" class="hover:text-rose-400 transition">Hosting</a>
+      <a href="#contact" class="hover:text-rose-400 transition">Contact</a>
+    </div>
+    <button onclick="contactCreator()" class="bg-rose-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-rose-500 transition">Contact creator</button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-16 pb-20 text-center">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="inline-block bg-rose-900/50 text-rose-200 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-rose-500/30">
+      🎯 AI that actually helps your HR team
+    </div>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white">Your employees get instant answers.<br><span class="gradient-text">You get back hours every week.</span></h1>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto mt-6">HR Copilot answers leave questions, handles requests, and escalates to your team—automatically. No more repetitive Slack pings or email threads.</p>
+    <div class="flex flex-wrap justify-center gap-5 mt-10">
+      <button onclick="contactCreator()" class="btn-gradient text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2 text-lg"><i class="fas fa-envelope"></i> Contact creator for monthly plan</button>
+      <a href="https://payhip.com/b/UAv2Z" target="_blank" class="bg-gray-800 border border-gray-600 px-7 py-3.5 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2"><i class="fas fa-shopping-cart"></i> Buy one‑time license (Payhip)</a>
+    </div>
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-gray-300">
+      <div><i class="fas fa-clock text-rose-400 text-2xl mb-2"></i><p class="text-sm font-medium">Answers in seconds</p></div>
+      <div><i class="fas fa-user-shield text-rose-400 text-2xl mb-2"></i><p class="text-sm font-medium">Secure & private</p></div>
+      <div><i class="fas fa-comment-dots text-rose-400 text-2xl mb-2"></i><p class="text-sm font-medium">Understands natural language</p></div>
+      <div><i class="fab fa-slack text-rose-400 text-2xl mb-2"></i><p class="text-sm font-medium">Slack-ready</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-16 bg-[#070c1a]/70">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">What HR Copilot does for you</h2>
+      <p class="text-gray-400 mt-3 max-w-2xl mx-auto">No coding, no complex setup. Just plug‑and‑play AI for everyday HR tasks.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fas fa-calendar-alt"></i></div>
+        <h3 class="text-xl font-bold text-white">Leave balance & requests</h3>
+        <p class="text-gray-300">Employees ask “How many days left?” or “I need 3 days off” — the bot understands and takes action.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fas fa-ban"></i></div>
+        <h3 class="text-xl font-bold text-white">Cancel or change requests</h3>
+        <p class="text-gray-300">Last‑minute plan change? The assistant handles cancellations without HR intervention.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fas fa-book-open"></i></div>
+        <h3 class="text-xl font-bold text-white">Policy Q&A + document upload</h3>
+        <p class="text-gray-300">Upload your employee handbook (PDF). The AI answers questions instantly from your own docs.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fab fa-slack"></i></div>
+        <h3 class="text-xl font-bold text-white">Slack & Teams integration</h3>
+        <p class="text-gray-300">Add to Slack in one click. Employees chat naturally; escalations go to HR channels.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fas fa-chart-line"></i></div>
+        <h3 class="text-xl font-bold text-white">Usage dashboard</h3>
+        <p class="text-gray-300">See top questions, escalation rate, and team activity at a glance.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-6 hover:bg-[#1e293b]/50 transition">
+        <div class="bg-rose-900/40 w-12 h-12 rounded-xl flex items-center justify-center text-rose-300 text-xl mb-4"><i class="fas fa-headset"></i></div>
+        <h3 class="text-xl font-bold text-white">Free onboarding call</h3>
+        <p class="text-gray-300">We’ll hop on a 15-min screen share to connect Slack, upload your policies, and answer questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing – sustainable monthly rates (reddish theme) -->
+<section id="pricing" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-white">Simple, sustainable pricing</h2>
+      <p class="text-gray-400 text-lg mt-2">Monthly plans are managed directly with the creator. One‑time license via Payhip.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Starter Plan -->
+      <div class="pricing-card rounded-3xl p-6">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-white">Starter</h3>
+          <div class="mt-4"><span class="text-4xl font-black text-rose-300">$49</span><span class="text-gray-400">/month</span></div>
+          <p class="text-sm text-rose-400 mt-1">or $490/year (save $98)</p>
+        </div>
+        <hr class="my-5">
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> 500 employee queries/month</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Leave balance & requests</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Policy Q&A (1 handbook)</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Slack integration</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Email support</li>
+        </ul>
+        <button onclick="contactCreator()" class="w-full bg-gray-800 border border-rose-500 text-rose-300 font-semibold py-2.5 rounded-xl mt-6 hover:bg-rose-900/30 transition">Contact creator →</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-card rounded-3xl p-6 border-2 border-rose-500 relative shadow-xl">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-600 text-white text-xs font-bold px-4 py-1 rounded-full">Most popular</div>
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-white">Pro</h3>
+          <div class="mt-4"><span class="text-4xl font-black text-rose-300">$99</span><span class="text-gray-400">/month</span></div>
+          <p class="text-sm text-rose-400 mt-1">or $990/year (save $198)</p>
+        </div>
+        <hr class="my-5">
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> <strong>Unlimited</strong> employee queries</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Leave + cancel + full policy actions</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Upload up to 15 policy docs</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Slack + Teams + API access</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Advanced analytics dashboard</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Priority support + onboarding call</li>
+        </ul>
+        <button onclick="contactCreator()" class="w-full btn-gradient text-white font-semibold py-2.5 rounded-xl mt-6">Contact creator →</button>
+      </div>
+
+      <!-- One-time License -->
+      <div class="pricing-card rounded-3xl p-6">
+        <div class="text-center">
+          <i class="fas fa-box-open text-rose-400 text-3xl mb-2"></i>
+          <h3 class="text-2xl font-bold text-white">One‑time license</h3>
+          <div class="mt-4"><span class="text-4xl font-black text-rose-300">$150</span><span class="text-gray-400"> once</span></div>
+          <p class="text-sm text-gray-400 mt-1">self-hosted, perpetual + 1 year updates</p>
+        </div>
+        <hr class="my-5">
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Full ownership</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Deploy on your own servers (VPS, on‑prem)</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Unlimited employees & queries</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> Customize AI prompts & responses</li>
+          <li><i class="fas fa-check-circle text-rose-400 w-4 mr-2"></i> 1 year of updates + priority support</li>
+        </ul>
+        <a href="https://payhip.com/b/UAv2Z" target="_blank" class="w-full bg-gray-800 border-2 border-rose-500 text-rose-300 font-semibold py-2.5 rounded-xl mt-6 hover:bg-rose-900/20 transition text-center block">Buy on Payhip →</a>
+      </div>
+    </div>
+    <p class="text-center text-gray-400 text-sm mt-8">For monthly plans (Starter & Pro), <button onclick="contactCreator()" class="text-rose-400 underline font-medium">email the creator</button> to set up your account, start a free trial, or ask questions. No hidden fees – just sustainable pricing to keep us serving you.</p>
+  </div>
+</section>
+
+<!-- Hosting options -->
+<section id="hosting" class="py-16 bg-[#0a0f1e]/80 border-t border-b border-rose-900/30">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-white">Fully managed vs. self-hosted</h2>
+      <p class="text-gray-400 mt-2">Pick what works best for your team</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass-card rounded-2xl p-6">
+        <i class="fas fa-cloud-upload-alt text-rose-400 text-3xl mb-3"></i>
+        <h3 class="text-xl font-bold text-white">Monthly plans (Starter & Pro)</h3>
+        <p class="text-gray-300 mt-2">We host everything. You get a Slack bot or API endpoint. Includes free onboarding, automatic updates, and a dashboard. <strong>Contact the creator directly</strong> to start a trial or subscribe.</p>
+        <button onclick="contactCreator()" class="mt-4 text-rose-400 font-medium flex items-center gap-1 hover:text-rose-300 transition">Email creator →</button>
+      </div>
+      <div class="glass-card rounded-2xl p-6">
+        <i class="fas fa-server text-rose-400 text-3xl mb-3"></i>
+        <h3 class="text-xl font-bold text-white">One-time license (self-hosted)</h3>
+        <p class="text-gray-300 mt-2">You buy once and install on your own infrastructure. Full control, no recurring fees. Perfect for strict data residency. Purchase securely via Payhip.</p>
+        <a href="https://payhip.com/b/UAv2Z" target="_blank" class="mt-4 text-rose-400 font-medium flex items-center gap-1 hover:text-rose-300 transition">Buy on Payhip →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo chat example -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-rose-500/30">
+      <div class="bg-rose-900/60 px-6 py-4 text-white flex justify-between items-center">
+        <span><i class="fas fa-comment-dots mr-2"></i> Live demo – try it out</span>
+        <span class="text-xs bg-rose-700/80 px-2 py-1 rounded-full">Slack-like experience</span>
+      </div>
+      <div class="p-6 space-y-4 bg-[#0b0f1a]">
+        <div class="flex gap-3"><div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center text-white">👩‍💻</div><div class="bg-gray-800 rounded-2xl p-3 max-w-[80%] text-gray-200">How many vacation days do I have left?</div></div>
+        <div class="flex gap-3 justify-end"><div class="bg-rose-900/50 rounded-2xl p-3 max-w-[80%] text-gray-200 border border-rose-500/30">You have 12 vacation days remaining this year. Want to request time off?</div><div class="bg-rose-600 rounded-full w-8 h-8 flex items-center justify-center text-white">🤖</div></div>
+        <div class="flex gap-3"><div class="bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center text-white">👨‍💻</div><div class="bg-gray-800 rounded-2xl p-3 max-w-[80%] text-gray-200">Yes, please take May 10-12 off for a family trip.</div></div>
+        <div class="flex gap-3 justify-end"><div class="bg-rose-900/50 rounded-2xl p-3 max-w-[80%] text-gray-200 border border-rose-500/30">Your leave request has been submitted to your manager. I’ll notify you when it’s approved.</div><div class="bg-rose-600 rounded-full w-8 h-8 flex items-center justify-center text-white">🤖</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final Contact CTA -->
+<section id="contact" class="py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center glass-card rounded-3xl p-8">
+    <i class="fas fa-headset text-rose-400 text-4xl mb-4"></i>
+    <h2 class="text-3xl font-bold text-white">Ready to give your team an AI assistant?</h2>
+    <p class="text-gray-300 mt-3 mb-6">For monthly plans (Starter or Pro), just email the creator. No signup forms, no automated billing hassles — just a real person to help you.</p>
+    <div class="flex flex-wrap justify-center gap-5">
+      <button onclick="contactCreator()" class="btn-gradient text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2"><i class="fas fa-envelope"></i> Email creator for monthly plan</button>
+      <a href="https://payhip.com/b/UAv2Z" target="_blank" class="border border-gray-600 bg-gray-800 px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 flex items-center gap-2 text-gray-200"><i class="fas fa-shopping-cart"></i> Buy one‑time on Payhip</a>
+    </div>
+    <p class="text-xs text-gray-400 mt-6">Questions? <button onclick="contactCreator()" class="text-rose-400 underline">Contact the creator</button> – replies within 24 hours.</p>
+  </div>
+</section>
+
+<footer class="border-t border-[#1e293b] py-8 text-center text-gray-400 text-sm">
+  <p>© 2026 HR Copilot – Simple, secure AI for HR teams. <button onclick="contactCreator()" class="text-rose-400 underline">Contact creator</button> for monthly plans.</p>
+</footer>
+
+<script>
+  // Updated contact function: directs all "Contact creator" actions to info@jaeddelosa.tech
+  function contactCreator() {
+    window.location.href = "mailto:info@jaeddelosa.tech?subject=HR%20Copilot%20Inquiry";
+  }
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+  // Note: The "Contact creator" buttons and links now all route to info@jaeddelosa.tech
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Under Maintenance</title>
   <style>
