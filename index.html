@@ -2,385 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HR Copilot | AI Assistant for Leave & HR Questions</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Under Maintenance</title>
   <style>
-    * { font-family: 'Inter', sans-serif; }
-    
-    :root {
-      --primary: #e11d48;
-      --primary-dark: #9f1239;
-      --primary-light: #fb7185;
-      --secondary: #f43f5e;
-      --accent: #22d3ee;
-      --accent-glow: #06b6d4;
-      --bg-dark: #070a14;
-      --bg-card: #0e121f;
-      --bg-elevated: #111827;
-      --border-subtle: #1e293b;
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --glass-bg: rgba(14, 18, 31, 0.85);
-    }
-
     body {
-      background: radial-gradient(circle at 15% 0%, #0a0e1c, #030612);
-      color: var(--text-primary);
-    }
-    
-    .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(225, 29, 72, 0.25);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    
-    .pricing-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      height: 100%;
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      background: rgba(17, 24, 39, 0.85);
-      border: 1px solid rgba(225, 29, 72, 0.3);
-      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
     }
-    .pricing-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.6);
-      border-color: rgba(34, 211, 238, 0.6);
-      background: rgba(17, 24, 39, 0.95);
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
-    
-    .btn-gradient {
-      background: linear-gradient(95deg, var(--primary), var(--secondary));
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
-    .btn-gradient:hover {
-      transform: scale(0.98);
-      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.45);
-      filter: brightness(1.05);
+    .spinner {
+      border: 6px solid #333;
+      border-top: 6px solid #f5f5f5;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
     }
-    
-    .gradient-text {
-      background: linear-gradient(135deg, #fb7185, var(--accent), #38bdf8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    .problem-badge {
-      background: rgba(225, 29, 72, 0.08);
-      border-left: 4px solid var(--primary);
-      backdrop-filter: blur(4px);
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary);
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
-
-    hr {
-      border-color: var(--border-subtle);
-    }
-
-    .text-gray-500, .text-gray-600, .text-gray-700 {
-      color: var(--text-secondary) !important;
-    }
-    .text-gray-400 {
-      color: var(--text-muted) !important;
-    }
-    .text-white {
-      color: var(--text-primary) !important;
-    }
-    .border-gray-200 {
-      border-color: var(--border-subtle) !important;
-    }
-    .bg-white\/70, .bg-white\/85, .bg-white {
-      background-color: var(--bg-card) !important;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
-<body class="antialiased">
-
-<nav class="sticky top-0 z-50 bg-[#0a0e1c]/90 backdrop-blur-md border-b border-[#1e293b]">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="flex items-center gap-2">
-      <i class="fas fa-robot text-[#fb7185] text-2xl"></i>
-      <span class="font-bold text-2xl text-white">HR Copilot</span>
-    </div>
-    <div class="hidden md:flex space-x-6 text-gray-300 font-medium">
-      <a href="#problem" class="hover:text-[#22d3ee] transition">Problem</a>
-      <a href="#features" class="hover:text-[#22d3ee] transition">Features</a>
-      <a href="#pricing" class="hover:text-[#22d3ee] transition">Pricing</a>
-      <a href="#hosting" class="hover:text-[#22d3ee] transition">Hosting</a>
-      <a href="#contact" class="hover:text-[#22d3ee] transition">Contact</a>
-    </div>
-    <button onclick="contactCreator()" class="bg-[#e11d48] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-[#f43f5e] transition">Contact creator</button>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="pt-16 pb-20 text-center">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="inline-block bg-[#e11d48]/10 text-[#fb7185] text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-[#e11d48]/30">
-      🎯 AI that actually helps your HR team
-    </div>
-    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white">Your employees get instant answers.<br><span class="gradient-text">You get back hours every week.</span></h1>
-    <p class="text-xl text-gray-300 max-w-2xl mx-auto mt-6">HR Copilot answers leave questions, handles requests, and escalates to your team—automatically. No more repetitive Slack pings or email threads.</p>
-    <div class="flex flex-wrap justify-center gap-5 mt-10">
-      <button onclick="contactCreator()" class="btn-gradient text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2 text-lg"><i class="fas fa-envelope"></i> Contact creator to purchase</button>
-      <button onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });" class="bg-gray-800 border border-gray-600 text-gray-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2"><i class="fas fa-chart-line"></i> View pricing</button>
-    </div>
-    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-gray-300">
-      <div><i class="fas fa-clock text-[#22d3ee] text-2xl mb-2"></i><p class="text-sm font-medium">Answers in seconds</p></div>
-      <div><i class="fas fa-user-shield text-[#22d3ee] text-2xl mb-2"></i><p class="text-sm font-medium">Secure & private</p></div>
-      <div><i class="fas fa-comment-dots text-[#22d3ee] text-2xl mb-2"></i><p class="text-sm font-medium">Understands natural language</p></div>
-      <div><i class="fab fa-slack text-[#22d3ee] text-2xl mb-2"></i><p class="text-sm font-medium">Slack-ready</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Problem Section -->
-<section id="problem" class="py-16 bg-gradient-to-br from-[#0a0e1c] to-[#0f0a1a]">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-10">
-      <span class="text-[#fb7185] font-semibold text-sm uppercase tracking-wider">The real pain point</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Your HR team is drowning in the same questions every day</h2>
-      <p class="text-gray-300 max-w-2xl mx-auto mt-4">It's not just annoying — it's expensive and slows everyone down.</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="space-y-5">
-        <div class="flex gap-3 items-start">
-          <i class="fas fa-comments text-[#e11d48] text-xl mt-1"></i>
-          <p class="text-gray-300"><strong>“How many days do I have left?”</strong> — asked 50 times a month, pulling HR out of deep work.</p>
-        </div>
-        <div class="flex gap-3 items-start">
-          <i class="fas fa-hourglass-half text-[#e11d48] text-xl mt-1"></i>
-          <p class="text-gray-300"><strong>Delayed answers</strong> — employees wait hours or days for simple leave balances, reducing trust.</p>
-        </div>
-        <div class="flex gap-3 items-start">
-          <i class="fas fa-file-alt text-[#e11d48] text-xl mt-1"></i>
-          <p class="text-gray-300"><strong>Policy documents go unread</strong> — your handbook gathers dust while questions repeat.</p>
-        </div>
-        <div class="flex gap-3 items-start">
-          <i class="fas fa-ban text-[#e11d48] text-xl mt-1"></i>
-          <p class="text-gray-300"><strong>No after-hours support</strong> — questions come at 8 PM, weekends. Your team needs a break.</p>
-        </div>
-      </div>
-      <div class="bg-gray-800/70 p-6 rounded-2xl shadow-md problem-badge border border-[#e11d48]/30">
-        <div class="text-center">
-          <i class="fas fa-chart-line text-[#fb7185] text-3xl mb-3"></i>
-          <p class="text-2xl font-bold text-white">The cost of manual HR questions</p>
-          <p class="text-gray-300 mt-2">100 repetitive questions a month × 3 minutes each = <strong>5 hours</strong> of HR time wasted monthly. Hours that could be spent on strategy.</p>
-          <div class="mt-4 text-sm text-[#22d3ee]">HR Copilot answers instantly, automatically, 24/7.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Features -->
-<section id="features" class="py-16 bg-[#070a14]/80">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <span class="text-[#22d3ee] font-semibold text-sm uppercase tracking-wider">The solution</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">What HR Copilot does for you</h2>
-      <p class="text-gray-300 mt-3 max-w-2xl mx-auto">No coding, no complex setup. Just plug‑and‑play AI for everyday HR tasks.</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fas fa-calendar-alt"></i></div>
-        <h3 class="text-xl font-bold text-white">Leave balance & requests</h3>
-        <p class="text-gray-300">Employees ask “How many days left?” or “I need 3 days off” — the bot understands and takes action.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fas fa-ban"></i></div>
-        <h3 class="text-xl font-bold text-white">Cancel or change requests</h3>
-        <p class="text-gray-300">Last‑minute plan change? The assistant handles cancellations without HR intervention.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fas fa-book-open"></i></div>
-        <h3 class="text-xl font-bold text-white">Policy Q&A + document upload</h3>
-        <p class="text-gray-300">Upload your employee handbook (PDF). The AI answers questions instantly from your own docs.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fab fa-slack"></i></div>
-        <h3 class="text-xl font-bold text-white">Slack & Teams integration</h3>
-        <p class="text-gray-300">Add to Slack in one click. Employees chat naturally; escalations go to HR channels.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fas fa-chart-line"></i></div>
-        <h3 class="text-xl font-bold text-white">Usage dashboard</h3>
-        <p class="text-gray-300">See top questions, escalation rate, and team activity at a glance.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-6 transition hover:bg-[#111827]">
-        <div class="bg-[#e11d48]/20 w-12 h-12 rounded-xl flex items-center justify-center text-[#fb7185] text-xl mb-4"><i class="fas fa-headset"></i></div>
-        <h3 class="text-xl font-bold text-white">Onboarding call included</h3>
-        <p class="text-gray-300">We’ll hop on a 15-min screen share to connect Slack, upload your policies, and answer questions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING SECTION — Market rates, no free trial, no Payhip -->
-<section id="pricing" class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white">Simple, sustainable pricing</h2>
-      <p class="text-gray-300 text-lg mt-2">No hidden fees, no long-term lock-in. Contact creator to purchase.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      
-      <!-- Essential Plan -->
-      <div class="pricing-card rounded-3xl p-6 border border-[#e11d48]/30">
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-white">Essential</h3>
-          <div class="mt-4"><span class="text-4xl font-black text-[#fb7185]">$39</span><span class="text-gray-400">/month</span></div>
-          <p class="text-sm text-[#22d3ee] mt-1">or $390/year (save $78)</p>
-        </div>
-        <hr class="my-5">
-        <ul class="space-y-3 text-gray-300 text-sm">
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> <strong>500</strong> employee queries/month</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Leave balance & requests + cancellations</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> 1 policy document (handbook Q&A)</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Slack integration</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Email support & basic dashboard</li>
-        </ul>
-        <button onclick="contactCreator()" class="w-full bg-gray-800 border border-[#e11d48] text-[#fb7185] font-semibold py-2.5 rounded-xl mt-6 hover:bg-[#e11d48]/20 transition">Contact creator →</button>
-      </div>
-
-      <!-- Professional Plan — most popular -->
-      <div class="pricing-card rounded-3xl p-6 border-2 border-[#e11d48] relative shadow-xl">
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#e11d48] to-[#f43f5e] text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Most popular</div>
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-white">Professional</h3>
-          <div class="mt-4"><span class="text-4xl font-black text-[#fb7185]">$99</span><span class="text-gray-400">/month</span></div>
-          <p class="text-sm text-[#22d3ee] mt-1">or $990/year (save $198)</p>
-        </div>
-        <hr class="my-5">
-        <ul class="space-y-3 text-gray-300 text-sm">
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> <strong>Unlimited</strong> employee queries</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Leave + cancel + all policy actions</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Upload up to 15 policy docs</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Slack + Teams + API access</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Advanced analytics dashboard</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Priority support + onboarding call</li>
-        </ul>
-        <button onclick="contactCreator()" class="w-full btn-gradient text-white font-semibold py-2.5 rounded-xl mt-6">Contact Creator →</button>
-      </div>
-
-      <!-- Enterprise / Self-hosted -->
-      <div class="pricing-card rounded-3xl p-6 border border-[#22d3ee]/30">
-        <div class="text-center">
-          <i class="fas fa-building text-[#22d3ee] text-3xl mb-2"></i>
-          <h3 class="text-2xl font-bold text-white">Enterprise</h3>
-          <div class="mt-4"><span class="text-4xl font-black text-[#22d3ee]">Custom</span></div>
-          <p class="text-sm text-gray-400 mt-1">Tailored for scale</p>
-        </div>
-        <hr class="my-5">
-        <ul class="space-y-3 text-gray-300 text-sm">
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Unlimited everything + custom SLAs</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Private cloud or on‑premise deployment</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> Dedicated AI fine-tuning on your HR data</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> SOC2 / GDPR compliance support</li>
-          <li><i class="fas fa-check-circle text-[#22d3ee] w-4 mr-2"></i> 24/7 priority support + account manager</li>
-        </ul>
-        <button onclick="contactCreator()" class="w-full bg-gray-800 border-2 border-[#22d3ee] text-[#22d3ee] font-semibold py-2.5 rounded-xl mt-6 hover:bg-[#22d3ee]/10 transition">Contact creator →</button>
-      </div>
-    </div>
-    <p class="text-center text-gray-400 text-sm mt-8">Monthly & annual billing options. <button onclick="contactCreator()" class="text-[#22d3ee] underline font-medium">Contact creator</button> to purchase or get a custom quote — direct support, no automated checkout.</p>
-  </div>
-</section>
-
-<!-- Hosting options -->
-<section id="hosting" class="py-16 bg-gradient-to-r from-[#0e121f] to-[#0a0f1a] border-y border-[#e11d48]/20">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-white">Fully managed or control your own infra</h2>
-      <p class="text-gray-300 mt-2">We adapt to your security & compliance needs</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-gray-800/70 rounded-2xl p-6 shadow-md hover:bg-gray-800 transition border border-gray-700">
-        <i class="fas fa-cloud-upload-alt text-[#22d3ee] text-3xl mb-3"></i>
-        <h3 class="text-xl font-bold text-white">Managed monthly plans (Essential / Pro)</h3>
-        <p class="text-gray-300 mt-2">Fully hosted by us — zero DevOps. We handle uptime, security patches, and updates. Includes onboarding, Slack/Teams setup, and usage dashboard.</p>
-        <button onclick="contactCreator()" class="mt-4 text-[#fb7185] font-medium flex items-center gap-1 hover:text-[#22d3ee] transition">Contact to purchase →</button>
-      </div>
-      <div class="bg-gray-800/70 rounded-2xl p-6 shadow-md hover:bg-gray-800 transition border border-gray-700">
-        <i class="fas fa-server text-[#22d3ee] text-3xl mb-3"></i>
-        <h3 class="text-xl font-bold text-white">Self-Hosted Option</h3>
-        <p class="text-gray-300 mt-2">For regulated industries, air-gapped environments and private deployment.</p>
-        <button onclick="contactCreator()" class="mt-4 text-[#fb7185] font-medium flex items-center gap-1 hover:text-[#22d3ee] transition">Request self-hosted workflow →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Demo chat example (unchanged) -->
-<section class="py-16">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-[#e11d48]/30">
-      <div class="bg-[#e11d48] px-6 py-4 text-white flex justify-between items-center">
-        <span><i class="fas fa-comment-dots mr-2"></i> Live demo – try it out</span>
-        <span class="text-xs bg-[#9f1239] px-2 py-1 rounded-full">Slack-like experience</span>
-      </div>
-      <div class="p-6 space-y-4 bg-[#0b0f1a]">
-        <div class="flex gap-3"><div class="bg-gray-700 rounded-full w-8 h-8 flex items-center justify-center text-white">👩‍💻</div><div class="bg-gray-800 rounded-2xl p-3 max-w-[80%] text-gray-200">How many vacation days do I have left?</div></div>
-        <div class="flex gap-3 justify-end"><div class="bg-[#e11d48]/20 rounded-2xl p-3 max-w-[80%] text-gray-100 border border-[#e11d48]/30">You have 12 vacation days remaining this year. Want to request time off?</div><div class="bg-[#e11d48] rounded-full w-8 h-8 flex items-center justify-center text-white">🤖</div></div>
-        <div class="flex gap-3"><div class="bg-gray-700 rounded-full w-8 h-8 flex items-center justify-center text-white">👨‍💻</div><div class="bg-gray-800 rounded-2xl p-3 max-w-[80%] text-gray-200">Yes, please take May 10-12 off for a family trip.</div></div>
-        <div class="flex gap-3 justify-end"><div class="bg-[#e11d48]/20 rounded-2xl p-3 max-w-[80%] text-gray-100 border border-[#e11d48]/30">Your leave request has been submitted to your manager. I’ll notify you when it’s approved.</div><div class="bg-[#e11d48] rounded-full w-8 h-8 flex items-center justify-center text-white">🤖</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Final Contact CTA — no trial, no Payhip -->
-<section id="contact" class="py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-[#22d3ee]/20">
-    <i class="fas fa-headset text-[#fb7185] text-4xl mb-4"></i>
-    <h2 class="text-3xl font-bold text-white">Ready to unburden your HR team?</h2>
-    <p class="text-gray-300 mt-3 mb-6">Monthly plans start at $39. No hidden costs, no long-term lock-in. Contact the creator directly to purchase or request an enterprise self-hosted demo.</p>
-    <div class="flex flex-wrap justify-center gap-5">
-      <button onclick="contactCreator()" class="btn-gradient text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2"><i class="fas fa-shopping-cart"></i> Contact Creator to Start</button>
-      <button onclick="contactCreator()" class="border border-gray-600 bg-gray-800 px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 flex items-center gap-2 text-gray-200"><i class="fas fa-building"></i> Enterprise quote</button>
-    </div>
-    <p class="text-xs text-gray-400 mt-6">Questions? <button onclick="contactCreator()" class="text-[#22d3ee] underline">Contact the creator</button> – reply within 24 hours.</p>
-  </div>
-</section>
-
-<footer class="border-t border-[#1e293b] py-8 text-center text-gray-400 text-sm">
-  <p>© 2026 HR Copilot – Simple, sustainable AI for HR teams. <button onclick="contactCreator()" class="text-[#fb7185] underline">Contact Creator to Start</button> for purchase & enterprise deployments.</p>
-</footer>
-
-<script>
-  function contactCreator() {
-    window.location.href = "https://jaeddelosa.tech/#contact";
-  }
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === "#" || href === "") return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+<body>
+  <h1>🚧 Site Under Maintenance 🚧</h1>
+  <p>We’re working hard to improve your experience. Please check back soon.</p>
+  <div class="spinner"></div>
 </body>
 </html>
